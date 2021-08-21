@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MackBook Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <img class="img-fluid" src="imgs/mac.png" alt="" srcset="">
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <header>
+                        <h3>Customize your bluel 24inch iMach-pro with M1 chip</h3>
+                        <p>
+                            M1 is the most powerful chip we’ve ever made. macOS Big Sur is the most advanced desktop
+                            operating system in the world. Combined, they take iMac to entirely new levels of
+                            performance, efficiency, and security.
+                        </p>
+                    </header>
+                    <div class="customize-options my-5">
+                        <div class="mb-4">
+                            <h4>Memory</h4>
+                            <p>
+                                <button id="memory-8GB" class="btn btn-outline-secondary">8GB unified memory</button>
+                                <button id="memory-16GB" class="btn btn-outline-secondary">16GB unified memory</button>
+                            </p>
+                        </div>
+                        <div class="mb-4">
+                            <h4>Storage</h4>
+                            <p>
+                                <button id="storage-256GB" class="btn btn-outline-secondary">256GB SSD Storage</button>
+                                <button id="storage-512GB" class="btn btn-outline-secondary">512GB SSD Storage</button>
+                                <button id="storage-1T" class="btn btn-outline-secondary">1T SSD Storage</button>
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Choose Your Delivery Option</h4>
+                            <p>
+                                <button id="delivery-free" class="btn btn-outline-secondary">Firday, 25 Aug prime
+                                    delivery</button>
+                                <button id="delivery-cost" class="btn btn-outline-secondary">Firday, 21 Aug $20
+                                    delivery</button>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="price-segment">
+                        <table class="table">
+
+                            <tbody>
+                                <tr>
+                                    <td>Best Price</td>
+                                    <td>$<span id="base-price">1299</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Extra memory cost</td>
+                                    <td>$<span id="extra-memory-cost">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Extra storage cost</td>
+                                    <td>$<span id="extra-storage-cost">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Delivery charge</td>
+                                    <td>$<span id="deliver-field">0</span></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Total price</td>
+                                    <td>$<span id="total-price">1299</span></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="promo-code-section">
+                        <h4>Add promo code</h4>
+                        <input type="text">
+                        <button class="btn btn-danger">apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <hr>
+    </div>
+    <footer class="pb-4">
+        <div class="container text-center">
+            <h2>Total: $<span id="total-price">1299</span></h2>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
