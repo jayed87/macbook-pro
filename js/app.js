@@ -9,93 +9,71 @@ function amountField(id) {
     const field = document.getElementById(id);
     return field;
 }
-// memory option 8GB
-document.getElementById('memory-8GB').addEventListener('click', function () {
-    const extMemoryCost = amountField('extra-memory-cost');
-    extMemoryCost.innerText = 0;
+function macBookPriceCalculation() {
+    const extMemoryCost = Price('extra-memory-cost');
     const extStoragePrice = Price('extra-storage-cost');
     const deliveryPrice = Price('deliver-field');
     const totalPriceField = amountField('total-price');
     const finalPriceField = amountField('final-price');
-    totalPriceField.innerText = 1299 + extStoragePrice + deliveryPrice;
-    finalPriceField.innerText = 1299 + extStoragePrice + deliveryPrice;
+    totalPriceField.innerText = 1299 + extStoragePrice + deliveryPrice + extMemoryCost;
+    finalPriceField.innerText = 1299 + extStoragePrice + deliveryPrice + extMemoryCost;
+}
+// memory option 8GB
+document.getElementById('memory-8GB').addEventListener('click', function () {
+    const extMemoryCost = amountField('extra-memory-cost');
+    extMemoryCost.innerText = 0;
+    macBookPriceCalculation();
 });
 // memory option 16GB
 document.getElementById('memory-16GB').addEventListener('click', function () {
     const extMemoryCostId = amountField('extra-memory-cost');
     extMemoryCostId.innerText = 180;
-    const extStoragePrice = Price('extra-storage-cost');
-    const deliveryPrice = Price('deliver-field');
-    const totalPriceField = amountField('total-price');
-    const finalPriceField = amountField('final-price');
-    totalPriceField.innerText = 1299 + extStoragePrice + deliveryPrice + 180;
-    finalPriceField.innerText = 1299 + extStoragePrice + deliveryPrice + 180;
+    macBookPriceCalculation();
 });
 // storage option 256GB
 document.getElementById('storage-256GB').addEventListener('click', function () {
     const extStorageCost = amountField('extra-storage-cost');
     extStorageCost.innerText = 0;
-    const extMemoryPrice = Price('extra-memory-cost');
-    const deliveryPrice = Price('deliver-field');
-    const totalPriceField = amountField('total-price');
-    const finalPriceField = amountField('final-price');
-    totalPriceField.innerText = 1299 + deliveryPrice + extMemoryPrice + 0;
-    finalPriceField.innerText = 1299 + deliveryPrice + extMemoryPrice + 0;
+    macBookPriceCalculation();
 });
 // storage option 512GB
 document.getElementById('storage-512GB').addEventListener('click', function () {
     const extStorageCost = amountField('extra-storage-cost');
     extStorageCost.innerText = 100;
-    const extMemoryCost = Price('extra-memory-cost');
-    const totalPriceText = amountField('total-price');
-    const deliveryPrice = Price('deliver-field');
-    const finalPriceField = amountField('final-price');
-    totalPriceText.innerText = 100 + 1299 + extMemoryCost + deliveryPrice;
-    finalPriceField.innerText = 100 + 1299 + extMemoryCost + deliveryPrice;
+    macBookPriceCalculation();
 });
 // storage option 1T
 document.getElementById('storage-1T').addEventListener('click', function () {
     const extStorageCost = amountField('extra-storage-cost');
     extStorageCost.innerText = 180;
-    const extMemoryCost = Price('extra-memory-cost');
-    const totalPriceText = amountField('total-price');
-    const deliveryPrice = Price('deliver-field');
-    const finalPriceField = amountField('final-price');
-    totalPriceText.innerText = 180 + 1299 + extMemoryCost + deliveryPrice;
-    finalPriceField.innerText = 180 + 1299 + extMemoryCost + deliveryPrice;
+    macBookPriceCalculation();
 });
 // delivery option $20
 document.getElementById('delivery-cost').addEventListener('click', function () {
-    const extDeliveryCost = document.getElementById('deliver-field');
+    const extDeliveryCost = amountField('deliver-field');
     extDeliveryCost.innerText = 20;
-    const extStoragePrice = Price('extra-storage-cost');
-    const extMemoryPrice = Price('extra-memory-cost');
-    const totalPriceField = amountField('total-price');
-    const finalPriceField = amountField('final-price');
-    totalPriceField.innerText = 1299 + extStoragePrice + extMemoryPrice + 20;
-    finalPriceField.innerText = 1299 + extStoragePrice + extMemoryPrice + 20;
+    macBookPriceCalculation();
 });
 // delivery option free
 document.getElementById('delivery-free').addEventListener('click', function () {
-    const extDeliveryCost = document.getElementById('deliver-field');
+    const extDeliveryCost = amountField('deliver-field');
     extDeliveryCost.innerText = 0;
-    const extStoragePrice = Price('extra-storage-cost');
-    const extMemoryPrice = Price('extra-memory-cost');
-    const totalPriceField = amountField('total-price');
-    const finalPriceField = amountField('final-price');
-    totalPriceField.innerText = 1299 + extStoragePrice + extMemoryPrice;
-    finalPriceField.innerText = 1299 + extStoragePrice + extMemoryPrice;
+    macBookPriceCalculation();
 });
 
 // vat apply 
 
 document.getElementById('code-apply-btn').addEventListener('click', function () {
     const totalPrice = Price('total-price');
-    const codeInput = document.getElementById('code-input').value;
-    const totalPriceField = amountField('final-price');
+    const codeInputField = document.getElementById('code-input');
+    const codeInput = codeInputField.value;
+    const finalPriceField = amountField('final-price');
     if (codeInput == 'stevekaku') {
         const priceAfterDiscount = totalPrice - ((totalPrice * 20) / 100);
-        totalPriceField.innerText = priceAfterDiscount;
+        finalPriceField.innerText = priceAfterDiscount;
+        codeInputField.value = '';
     }
+
+
 
 });
